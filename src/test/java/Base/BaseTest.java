@@ -1,6 +1,7 @@
 package Base;
 
 import Pages.AddRemoveElementsPage;
+import Pages.CheckboxesPage;
 import Pages.HomePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,7 @@ public class BaseTest {
 
     public HomePage homePage;
     public AddRemoveElementsPage addRemoveElementsPage;
+    public CheckboxesPage checkboxesPage;
 
     @BeforeClass
     public void setUp() {
@@ -23,6 +25,7 @@ public class BaseTest {
 
         homePage = new HomePage(driver);
         addRemoveElementsPage = new AddRemoveElementsPage(driver);
+        checkboxesPage = new CheckboxesPage(driver);
     }
 
     @AfterClass
