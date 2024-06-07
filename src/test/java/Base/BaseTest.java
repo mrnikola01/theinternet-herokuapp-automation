@@ -1,5 +1,6 @@
 package Base;
 
+import Pages.AddRemoveElementsPage;
 import Pages.HomePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,7 @@ public class BaseTest {
     public WebDriverWait wait;
 
     public HomePage homePage;
+    public AddRemoveElementsPage addRemoveElementsPage;
 
     @BeforeClass
     public void setUp() {
@@ -20,6 +22,7 @@ public class BaseTest {
         driver = new ChromeDriver();
 
         homePage = new HomePage(driver);
+        addRemoveElementsPage = new AddRemoveElementsPage(driver);
     }
 
     @AfterClass
