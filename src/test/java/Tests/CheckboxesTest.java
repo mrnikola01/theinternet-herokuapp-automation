@@ -14,6 +14,13 @@ public class CheckboxesTest extends BaseTest {
     }
 
     @Test
+    public void userIsOnCheckboxesPage() {
+        homePage.clickOnLinkText("Checkboxes");
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/checkboxes");
+    }
+
+    @Test
     public void userCanSelectCheckbox() {
         homePage.clickOnLinkText("Checkboxes");
         checkboxesPage.clickOnFirstCheckbox();

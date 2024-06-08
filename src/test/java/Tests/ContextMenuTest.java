@@ -14,6 +14,13 @@ public class ContextMenuTest extends BaseTest {
     }
 
     @Test
+    public void userIsOnContextMenuPage() {
+        homePage.clickOnLinkText("Context Menu");
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/context_menu");
+    }
+
+    @Test
     public void alertAppearsOnRightClick() {
         homePage.clickOnLinkText("Context Menu");
         contextMenuPage.rightClickOnBox();

@@ -14,6 +14,13 @@ public class DragAndDropTest extends BaseTest {
     }
 
     @Test
+    public void userIsOnDragAndDropPage() {
+        homePage.clickOnLinkText("Drag and Drop");
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/drag_and_drop");
+    }
+
+    @Test
     public void userCanDragAndDropAToB() {
         homePage.clickOnLinkText("Drag and Drop");
         dragAndDropPage.dragAndDropAToB();

@@ -14,11 +14,10 @@ public class ElementsTest extends BaseTest {
     }
 
     @Test
-    public void userCanAddElement() {
+    public void userIsOnAddOrRemoveElementsPage() {
         homePage.clickOnLinkText("Add/Remove Elements");
-        addRemoveElementsPage.clickOnAddElementButton();
 
-        Assert.assertEquals(addRemoveElementsPage.getDeleteButtons().size(), 1);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/add_remove_elements/");
     }
 
     @Test

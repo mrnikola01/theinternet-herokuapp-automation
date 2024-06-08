@@ -21,6 +21,20 @@ public class FormAuthenticationTest extends BaseTest {
     }
 
     @Test
+    public void userIsOnLoginPage() {
+        homePage.clickOnLinkText("Form Authentication");
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/login");
+    }
+
+    @Test
+    public void userIsOnSecurePage() {
+        loginWithCredentials("tomsmith", "SuperSecretPassword!");
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/secure");
+    }
+
+    @Test
     public void userCanLogIn() {
         loginWithCredentials("tomsmith", "SuperSecretPassword!");
 

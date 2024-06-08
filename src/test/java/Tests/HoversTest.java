@@ -14,6 +14,13 @@ public class HoversTest extends BaseTest {
     }
 
     @Test
+    public void userIsOnHoversPage() {
+        homePage.clickOnLinkText("Hovers");
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/hovers");
+    }
+
+    @Test
     public void userCanHoverOnFirstImage() {
         homePage.clickOnLinkText("Hovers");
         hoversPage.hoverOnImage(0);

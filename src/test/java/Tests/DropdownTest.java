@@ -14,6 +14,13 @@ public class DropdownTest extends BaseTest {
     }
 
     @Test
+    public void userIsOnDropdownPage() {
+        homePage.clickOnLinkText("Dropdown");
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/dropdown");
+    }
+
+    @Test
     public void userCanSelectFirstOption() {
         homePage.clickOnLinkText("Dropdown");
         dropdownPage.selectFirstOption();
