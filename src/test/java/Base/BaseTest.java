@@ -21,6 +21,8 @@ public class BaseTest {
     public DragAndDropPage dragAndDropPage;
     public DropdownPage dropdownPage;
     public FloatingMenuPage floatingMenuPage;
+    public FormAuthenticationLoginPage formAuthenticationLoginPage;
+    public FormAuthenticationSecurePage formAuthenticationSecurePage;
 
     @BeforeClass
     public void setUp() {
@@ -34,6 +36,8 @@ public class BaseTest {
         dragAndDropPage = new DragAndDropPage(driver);
         dropdownPage = new DropdownPage(driver);
         floatingMenuPage = new FloatingMenuPage(driver);
+        formAuthenticationLoginPage = new FormAuthenticationLoginPage(driver);
+        formAuthenticationSecurePage = new FormAuthenticationSecurePage(driver);
     }
 
     @AfterClass
