@@ -13,14 +13,14 @@ public class DragAndDropTest extends BaseTest {
         driver.get("https://the-internet.herokuapp.com/");
     }
 
-    @Test
+    @Test(priority = 10)
     public void userIsOnDragAndDropPage() {
         homePage.clickOnLinkText("Drag and Drop");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/drag_and_drop");
     }
 
-    @Test
+    @Test(priority = 20)
     public void userCanDragAndDropAToB() {
         homePage.clickOnLinkText("Drag and Drop");
         dragAndDropPage.dragAndDropAToB();
@@ -28,7 +28,7 @@ public class DragAndDropTest extends BaseTest {
         Assert.assertEquals(dragAndDropPage.getColumnBHeaderText(), "A");
     }
 
-    @Test
+    @Test(priority = 30)
     public void userCanDragAndDropBToA() {
         homePage.clickOnLinkText("Drag and Drop");
         dragAndDropPage.dragAndDropBToA();

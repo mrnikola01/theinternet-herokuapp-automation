@@ -13,14 +13,14 @@ public class HoversTest extends BaseTest {
         driver.get("https://the-internet.herokuapp.com/");
     }
 
-    @Test
+    @Test(priority = 10)
     public void userIsOnHoversPage() {
         homePage.clickOnLinkText("Hovers");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/hovers");
     }
 
-    @Test
+    @Test(priority = 20)
     public void userCanHoverOnFirstImage() {
         homePage.clickOnLinkText("Hovers");
         hoversPage.hoverOnImage(0);
@@ -28,7 +28,7 @@ public class HoversTest extends BaseTest {
         Assert.assertEquals(hoversPage.getFirstUserName(), "name: user1");
     }
 
-    @Test
+    @Test(priority = 30)
     public void userCanHoverOnSecondImage() {
         homePage.clickOnLinkText("Hovers");
         hoversPage.hoverOnImage(1);
@@ -36,7 +36,7 @@ public class HoversTest extends BaseTest {
         Assert.assertEquals(hoversPage.getSecondUserName(), "name: user2");
     }
 
-    @Test
+    @Test(priority = 40)
     public void userCanHoverOnThirdImage() {
         homePage.clickOnLinkText("Hovers");
         hoversPage.hoverOnImage(2);

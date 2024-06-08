@@ -13,14 +13,14 @@ public class FloatingMenuTest extends BaseTest {
         driver.get("https://the-internet.herokuapp.com/");
     }
 
-    @Test
+    @Test(priority = 10)
     public void userIsOnFloatingMenuPage() {
         homePage.clickOnLinkText("Floating Menu");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/floating_menu");
     }
 
-    @Test
+    @Test(priority = 20)
     public void userCanSeeFloatingMenuWhenScroll() {
         homePage.clickOnLinkText("Floating Menu");
         floatingMenuPage.scrollToPageEnd();

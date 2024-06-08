@@ -13,14 +13,14 @@ public class ContextMenuTest extends BaseTest {
         driver.get("https://the-internet.herokuapp.com/");
     }
 
-    @Test
+    @Test(priority = 10)
     public void userIsOnContextMenuPage() {
         homePage.clickOnLinkText("Context Menu");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/context_menu");
     }
 
-    @Test
+    @Test(priority = 20)
     public void alertAppearsOnRightClick() {
         homePage.clickOnLinkText("Context Menu");
         contextMenuPage.rightClickOnBox();
@@ -29,7 +29,7 @@ public class ContextMenuTest extends BaseTest {
         contextMenuPage.clickOnAlertButton();
     }
 
-    @Test
+    @Test(priority = 30)
     public void alertNotAppearsOnLeftClick() {
         homePage.clickOnLinkText("Context Menu");
         contextMenuPage.leftClickOnBox();

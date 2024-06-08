@@ -13,14 +13,14 @@ public class ElementsTest extends BaseTest {
         driver.get("https://the-internet.herokuapp.com/");
     }
 
-    @Test
+    @Test(priority = 10)
     public void userIsOnAddOrRemoveElementsPage() {
         homePage.clickOnLinkText("Add/Remove Elements");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/add_remove_elements/");
     }
 
-    @Test
+    @Test(priority = 20)
     public void userCanAddMultipleElements() {
         homePage.clickOnLinkText("Add/Remove Elements");
         for(int i = 0; i < 5; i++) addRemoveElementsPage.clickOnAddElementButton();
@@ -28,7 +28,7 @@ public class ElementsTest extends BaseTest {
         Assert.assertEquals(addRemoveElementsPage.getDeleteButtons().size(), 5);
     }
 
-    @Test
+    @Test(priority = 30)
     public void userCanRemoveElement() {
         homePage.clickOnLinkText("Add/Remove Elements");
         addRemoveElementsPage.clickOnAddElementButton();
@@ -38,7 +38,7 @@ public class ElementsTest extends BaseTest {
 
     }
 
-    @Test
+    @Test(priority = 40)
     public void userCanRemoveMultipleElements() {
         homePage.clickOnLinkText("Add/Remove Elements");
         for(int i = 0; i < 5; i++) addRemoveElementsPage.clickOnAddElementButton();

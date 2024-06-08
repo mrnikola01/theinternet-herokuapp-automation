@@ -13,14 +13,14 @@ public class InputsTest extends BaseTest {
         driver.get("https://the-internet.herokuapp.com/");
     }
 
-    @Test
+    @Test(priority = 10)
     public void userIsOnInputsPage() {
         homePage.clickOnLinkText("Inputs");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/inputs");
     }
 
-    @Test
+    @Test(priority = 20)
     public void userCanInputNumber() {
         homePage.clickOnLinkText("Inputs");
         inputsPage.insertNumber("123");
@@ -28,7 +28,7 @@ public class InputsTest extends BaseTest {
         Assert.assertEquals(inputsPage.getNumberInputValue(), "123");
     }
 
-    @Test
+    @Test(priority = 30)
     public void userCantInputLetter() {
         homePage.clickOnLinkText("Inputs");
         inputsPage.insertNumber("a");

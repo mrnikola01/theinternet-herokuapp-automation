@@ -20,21 +20,21 @@ public class FormAuthenticationTest extends BaseTest {
         formAuthenticationLoginPage.clickOnLoginButton();
     }
 
-    @Test
+    @Test(priority = 10)
     public void userIsOnLoginPage() {
         homePage.clickOnLinkText("Form Authentication");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/login");
     }
 
-    @Test
+    @Test(priority = 20)
     public void userIsOnSecurePage() {
         loginWithCredentials("tomsmith", "SuperSecretPassword!");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/secure");
     }
 
-    @Test
+    @Test(priority = 30)
     public void userCanLogIn() {
         loginWithCredentials("tomsmith", "SuperSecretPassword!");
 
@@ -43,7 +43,7 @@ public class FormAuthenticationTest extends BaseTest {
         Assert.assertTrue(formAuthenticationSecurePage.getLogoutButton().isDisplayed());
     }
 
-    @Test
+    @Test(priority = 40)
     public void userCanLogOut() {
         loginWithCredentials("tomsmith", "SuperSecretPassword!");
         formAuthenticationSecurePage.clickOnLogoutButton();
@@ -53,7 +53,7 @@ public class FormAuthenticationTest extends BaseTest {
         Assert.assertTrue(formAuthenticationLoginPage.getPasswordInput().isDisplayed());
     }
 
-    @Test
+    @Test(priority = 50)
     public void userCannotLogInInvalidUsername() {
         loginWithCredentials("invalidUsername", "SuperSecretPassword!");
 
@@ -62,7 +62,7 @@ public class FormAuthenticationTest extends BaseTest {
         Assert.assertTrue(formAuthenticationLoginPage.getErrorMessageText().contains("Your username is invalid!"));
     }
 
-    @Test
+    @Test(priority = 60)
     public void userCannotLogInInvalidPassword() {
         loginWithCredentials("tomsmith", "invalidPassword");
 

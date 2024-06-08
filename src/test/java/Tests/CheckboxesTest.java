@@ -13,14 +13,14 @@ public class CheckboxesTest extends BaseTest {
         driver.get("https://the-internet.herokuapp.com/");
     }
 
-    @Test
+    @Test(priority = 10)
     public void userIsOnCheckboxesPage() {
         homePage.clickOnLinkText("Checkboxes");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/checkboxes");
     }
 
-    @Test
+    @Test(priority = 20)
     public void userCanSelectCheckbox() {
         homePage.clickOnLinkText("Checkboxes");
         checkboxesPage.clickOnFirstCheckbox();
@@ -28,7 +28,7 @@ public class CheckboxesTest extends BaseTest {
         Assert.assertTrue(checkboxesPage.getCheckboxes().get(0).isSelected());
     }
 
-    @Test
+    @Test(priority = 30)
     public void userCanSelectAllCheckboxes() {
         homePage.clickOnLinkText("Checkboxes");
         checkboxesPage.clickOnSecondCheckbox();
@@ -39,7 +39,7 @@ public class CheckboxesTest extends BaseTest {
         Assert.assertTrue(checkboxesPage.getCheckboxes().get(1).isSelected());
     }
 
-    @Test
+    @Test(priority = 40)
     public void userCanDeselectCheckbox() {
         homePage.clickOnLinkText("Checkboxes");
         checkboxesPage.clickOnSecondCheckbox();
@@ -47,7 +47,7 @@ public class CheckboxesTest extends BaseTest {
         Assert.assertFalse(checkboxesPage.getCheckboxes().get(1).isSelected());
     }
 
-    @Test
+    @Test(priority = 50)
     public void userCanDeselectAllCheckboxes() {
         homePage.clickOnLinkText("Checkboxes");
         checkboxesPage.clickOnFirstCheckbox();

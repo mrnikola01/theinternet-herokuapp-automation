@@ -13,14 +13,14 @@ public class DropdownTest extends BaseTest {
         driver.get("https://the-internet.herokuapp.com/");
     }
 
-    @Test
+    @Test(priority = 10)
     public void userIsOnDropdownPage() {
         homePage.clickOnLinkText("Dropdown");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/dropdown");
     }
 
-    @Test
+    @Test(priority = 20)
     public void userCanSelectFirstOption() {
         homePage.clickOnLinkText("Dropdown");
         dropdownPage.selectFirstOption();
@@ -28,7 +28,7 @@ public class DropdownTest extends BaseTest {
         Assert.assertEquals(dropdownPage.selectedOptionText(), "Option 1");
     }
 
-    @Test
+    @Test(priority = 30)
     public void userCanSelectSecondOption() {
         homePage.clickOnLinkText("Dropdown");
         dropdownPage.selectSecondOption();
