@@ -23,6 +23,7 @@ public class BaseTest {
     public FloatingMenuPage floatingMenuPage;
     public FormAuthenticationLoginPage formAuthenticationLoginPage;
     public FormAuthenticationSecurePage formAuthenticationSecurePage;
+    public HoversPage hoversPage;
 
     @BeforeClass
     public void setUp() {
@@ -38,6 +39,7 @@ public class BaseTest {
         floatingMenuPage = new FloatingMenuPage(driver);
         formAuthenticationLoginPage = new FormAuthenticationLoginPage(driver);
         formAuthenticationSecurePage = new FormAuthenticationSecurePage(driver);
+        hoversPage = new HoversPage(driver);
     }
 
     @AfterClass
