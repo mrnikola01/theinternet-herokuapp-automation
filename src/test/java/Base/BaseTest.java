@@ -20,6 +20,7 @@ public class BaseTest {
     public ContextMenuPage contextMenuPage;
     public DragAndDropPage dragAndDropPage;
     public DropdownPage dropdownPage;
+    public FloatingMenuPage floatingMenuPage;
 
     @BeforeClass
     public void setUp() {
@@ -32,6 +33,7 @@ public class BaseTest {
         contextMenuPage = new ContextMenuPage(driver);
         dragAndDropPage = new DragAndDropPage(driver);
         dropdownPage = new DropdownPage(driver);
+        floatingMenuPage = new FloatingMenuPage(driver);
     }
 
     @AfterClass
