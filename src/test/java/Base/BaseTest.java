@@ -1,9 +1,6 @@
 package Base;
 
-import Pages.AddRemoveElementsPage;
-import Pages.CheckboxesPage;
-import Pages.ContextMenuPage;
-import Pages.HomePage;
+import Pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,6 +18,7 @@ public class BaseTest {
     public AddRemoveElementsPage addRemoveElementsPage;
     public CheckboxesPage checkboxesPage;
     public ContextMenuPage contextMenuPage;
+    public DragAndDropPage dragAndDropPage;
 
     @BeforeClass
     public void setUp() {
@@ -31,6 +29,7 @@ public class BaseTest {
         addRemoveElementsPage = new AddRemoveElementsPage(driver);
         checkboxesPage = new CheckboxesPage(driver);
         contextMenuPage = new ContextMenuPage(driver);
+        dragAndDropPage = new DragAndDropPage(driver);
     }
 
     @AfterClass
