@@ -8,8 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import java.time.Duration;
-
 public class BaseTest {
     public WebDriver driver;
     public WebDriverWait wait;
@@ -24,6 +22,7 @@ public class BaseTest {
     public FormAuthenticationLoginPage formAuthenticationLoginPage;
     public FormAuthenticationSecurePage formAuthenticationSecurePage;
     public HoversPage hoversPage;
+    public InputsPage inputsPage;
 
     @BeforeClass
     public void setUp() {
@@ -40,6 +39,7 @@ public class BaseTest {
         formAuthenticationLoginPage = new FormAuthenticationLoginPage(driver);
         formAuthenticationSecurePage = new FormAuthenticationSecurePage(driver);
         hoversPage = new HoversPage(driver);
+        inputsPage = new InputsPage(driver);
     }
 
     @AfterClass
