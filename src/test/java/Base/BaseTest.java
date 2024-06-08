@@ -23,6 +23,7 @@ public class BaseTest {
     public FormAuthenticationSecurePage formAuthenticationSecurePage;
     public HoversPage hoversPage;
     public InputsPage inputsPage;
+    public KeyPressesPage keyPressesPage;
 
     @BeforeClass
     public void setUp() {
@@ -40,6 +41,7 @@ public class BaseTest {
         formAuthenticationSecurePage = new FormAuthenticationSecurePage(driver);
         hoversPage = new HoversPage(driver);
         inputsPage = new InputsPage(driver);
+        keyPressesPage = new KeyPressesPage(driver);
     }
 
     @AfterClass
