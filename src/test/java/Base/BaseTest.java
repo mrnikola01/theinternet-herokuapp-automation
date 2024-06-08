@@ -19,6 +19,7 @@ public class BaseTest {
     public CheckboxesPage checkboxesPage;
     public ContextMenuPage contextMenuPage;
     public DragAndDropPage dragAndDropPage;
+    public DropdownPage dropdownPage;
 
     @BeforeClass
     public void setUp() {
@@ -30,6 +31,7 @@ public class BaseTest {
         checkboxesPage = new CheckboxesPage(driver);
         contextMenuPage = new ContextMenuPage(driver);
         dragAndDropPage = new DragAndDropPage(driver);
+        dropdownPage = new DropdownPage(driver);
     }
 
     @AfterClass
